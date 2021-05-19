@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * returns a list of names used for auto complete
+ * 
+ * @return Array
+ */
+
+Route::get('names', 'medicationController@names');
+
+/**
+ * returns a medication and its related details
+ * 
+ * @return Array
+ */
+
+Route::get('details/{medication}', 'medicationController@details');
