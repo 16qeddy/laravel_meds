@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => 'https://stormy-inlet-78943.herokuapp.com/',
 
     'asset_url' => env('ASSET_URL', null),
 

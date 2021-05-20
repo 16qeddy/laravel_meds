@@ -32,3 +32,4 @@ Route::get('names', 'medicationController@names');
  */
 
 Route::get('details/{medication}', 'medicationController@details');
+
