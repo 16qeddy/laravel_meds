@@ -31,11 +31,13 @@ export default class App extends Component {
     render() {
         return (
             <div className="container">
-                <SearchBar searchOptionsOnClick={this.searchOptionsOnClick}/>
-                <Typography variant="h2" component="h2">{this.state.medicationName}</Typography>
-                {this.state.medicationData.conceptGroup?.map((item, index)=>{
-                    return <MedList data={item} key={index}/>
-                })}
+                <div className="cardColumn">
+                    <SearchBar searchOptionsOnClick={this.searchOptionsOnClick}/>
+                    <Typography variant="h4" component="h4" className="header">{this.state.medicationName}</Typography>
+                    {this.state.medicationData.conceptGroup?.map((item, index)=>{
+                        return <MedList data={item} key={index}/>
+                    })}
+                </div>
             </div>
         );
     }

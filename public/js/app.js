@@ -21803,19 +21803,23 @@ var App = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this$state$medicatio;
 
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_SearchBar_js__WEBPACK_IMPORTED_MODULE_2__.default, {
-          searchOptionsOnClick: this.searchOptionsOnClick
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__.default, {
-          variant: "h2",
-          component: "h2",
-          children: this.state.medicationName
-        }), (_this$state$medicatio = this.state.medicationData.conceptGroup) === null || _this$state$medicatio === void 0 ? void 0 : _this$state$medicatio.map(function (item, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_MedList_js__WEBPACK_IMPORTED_MODULE_3__.default, {
-            data: item
-          }, index);
-        })]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "cardColumn",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_SearchBar_js__WEBPACK_IMPORTED_MODULE_2__.default, {
+            searchOptionsOnClick: this.searchOptionsOnClick
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__.default, {
+            variant: "h4",
+            component: "h4",
+            className: "header",
+            children: this.state.medicationName
+          }), (_this$state$medicatio = this.state.medicationData.conceptGroup) === null || _this$state$medicatio === void 0 ? void 0 : _this$state$medicatio.map(function (item, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_MedList_js__WEBPACK_IMPORTED_MODULE_3__.default, {
+              data: item
+            }, index);
+          })]
+        })
       });
     }
   }]);
