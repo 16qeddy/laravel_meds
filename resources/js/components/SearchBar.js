@@ -34,6 +34,7 @@ export default class SearchBar extends Component {
     return (
       <Autocomplete
         size="small"
+        onChange={this.props.searchOptionsOnClick}
         loading={this.state.options===[]}
         onInputChange={this.onInputChange}
         id="combo-box-demo"

@@ -1,24 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import SearchBar from './SearchBar.js';
+import MedList from './MedList.js';
+import axios from 'axios';
 
-function App() {
-    return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
-                        <SearchBar/>
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
+export default class App extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            medicationData: []
+        }
+    }
+    
+    searchOptionsOnClick = (e, val) =>{
+        if(val){
+            axios.get(`/details/${val}`)
+            .then((data)=>{
+                console.log(data.data);
+                this.setState({
+                    medicationData: data.data
+                })
+            })
+        }
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <SearchBar searchOptionsOnClick={this.searchOptionsOnClick}/>
+                {this.state.medicationData.conceptGroup?.map((item, index)=>{
+                    return <MedList data={item} key={index}/>
+                })}
             </div>
-        </div>
-    );
+        );
+    }
 }
-
-export default App;
 
 if (document.getElementById('app')) {
     ReactDOM.render(<App />, document.getElementById('app'));
