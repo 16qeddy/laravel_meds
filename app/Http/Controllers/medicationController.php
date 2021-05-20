@@ -95,7 +95,7 @@ class medicationController extends Controller
      * @return Array
      */
     public function names () {
-        return Http::get('https://rxnav.nlm.nih.gov/REST/displaynames.json');
+        return Http::get('https://rxnav.nlm.nih.gov/REST/displaynames.json')['displayTermsList']['term'];
     }
 
 }
